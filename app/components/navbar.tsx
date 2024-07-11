@@ -1,4 +1,4 @@
-const Footer = () => {
+const NavBar = () => {
     return (
         <footer className="bg-white border-t">
             <div className="mx-auto py-10">
@@ -10,4 +10,4 @@ const Footer = () => {
     );
 }
 
-export default Footer;
+export default NavBar;
