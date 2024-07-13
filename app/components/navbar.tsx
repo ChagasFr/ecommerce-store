@@ -1,12 +1,18 @@
+import Container from "./ui/container";
+
+import Link from "next/link";
+
 const NavBar = () => {
     return (
-        <footer className="bg-white border-t">
-            <div className="mx-auto py-10">
-                <p className="text-center text-xs text-black">
-                    &copy; 2023 FakeStoreName, Inc. All rights reserved.
-                </p>
-            </div>
-        </footer>
+        <div className="border-b">
+            <Container>
+                <div className="relative- px-4 sm:px-6 lg:px-8">
+                    <Link href="/" className="ml-4 flex lg:ml-0 gap-x-2">
+                        <p className="font-bold text-xl">STORE</p>
+                    </Link>
+                </div>
+            </Container>
+        </div>
     );
 }
 
