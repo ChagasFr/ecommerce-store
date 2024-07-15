@@ -1,3 +1,5 @@
+import { cn } from "@/lib/utils"
+
 import * as React from "react"
 
 const buttonVariants = cva(
@@ -37,6 +39,22 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     ({ className, children, disabled, type = "button", ...props }, ref) => {
         return (
             <button
+                className={cn(
+                    `
+                    w-auto
+                    rounded-full
+                    bg-black
+                    border-transparent
+                    px-5
+                    py-3
+                    disabled:cursor-not-allowed
+                    disabled:opacity-50
+                    text-white
+                    font-semibold
+                    hover:opacity-75
+                    transition
+                `
+                )}
                 ref={ref}
             >
                 {children}
@@ -46,4 +64,4 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 )
 Button.displayName = "Button"
 
-export { Button, buttonVariants }
+export default Button;
