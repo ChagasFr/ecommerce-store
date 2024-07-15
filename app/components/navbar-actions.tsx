@@ -2,8 +2,14 @@
 
 import { ShoppingBag } from "lucide-react";
 import Button from "./ui/Button";
+import { useEffect, useState } from "react";
 
 const NavBarActions = () => {
+    const [isMounted, setIsMounted] = useState(false);
+
+    useEffect(() => {
+        setIsMounted(true)
+    }, [])
 
     return (
         <div className="ml-auto flex items-center gap-x-4">
@@ -12,6 +18,9 @@ const NavBarActions = () => {
                     size={20}
                     color="white"
                 />
+                <span className="ml-2 test-sm font-medium text-white">
+                    0
+                </span>
             </Button>
         </div>
     );
