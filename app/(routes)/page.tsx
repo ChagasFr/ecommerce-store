@@ -1,13 +1,16 @@
-import Billboard from "../components/billboard";
+import getBillboard from "@/actions/get-categories";
 import Container from "../components/ui/container";
+import Billboard from "../components/billboard";
 
 export const revalidate = 0;
 
-const HomePage = () => {
+const HomePage = async () => {
+    const billboard = await getBillboard("432879d98-ad32-32a0-342-e473824ff48d0") // passar o correto
+
     return (
         <Container>
             <div className="space-y-20 pb-10">
-                <Billboard />
+                <Billboard data={billboard} />
             </div>
         </Container>
     )
