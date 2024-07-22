@@ -1,9 +1,10 @@
 "use client";
-import { Currency, Expand, ShoppingCart } from "lucide-react";
+import { Expand, ShoppingCart } from "lucide-react";
 import Image from "next/image";
 
 import { Product } from "@/types";
 import IconButton from "./icon-button";
+import Currency from "./currency";
 
 interface ProductCard {
     data: Product;
