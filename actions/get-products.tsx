@@ -5,7 +5,7 @@ import { Product } from "@/types"
 const URL = `${process.env.NEXT_PUBLIC_API_URL}/products`
 
 interface Query {
-    category?: string;
+    categoryId?: string;
     colorId?: string;
     sizeId?: string;
     isFeatured?: boolean
@@ -22,7 +22,7 @@ const getProduct = async (query: Query): Promise<Product[]> => {
         }
     })
 
-    const res = await fetch(`${URL}/${id}`);
+    const res = await fetch(URL);
 
     return res.json()
 };
