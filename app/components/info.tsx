@@ -7,14 +7,16 @@ interface InfoProps {
 const Info: React.FC<InfoProps> = async ({
     data
 }) => {
-    const product = await getProduct(params.productId);
-
-    const suggertedProducts = await getProducts({
-        categoryId: product?.category.id
-    })
-
     return (
         <div className="bg-white">
+            <h1 className="text-3xl font-bold text-gray-900">
+                {data.name}
+            </h1>
+            <div className="mt-3 items-end justify-between">
+                <p className="text-2xl text-gray-900">
+
+                </p>
+            </div>
         </div>
     );
 }
