@@ -1,4 +1,10 @@
+import getCategory from "@/actions/get-category";
+import getColors from "@/actions/get-colors";
 import getProduct from "@/actions/get-products";
+import getSizes from "@/actions/get-sizes";
+import Billboard from "@/app/components/billboard";
+import Container from "@/app/components/ui/container";
+import Filter from "./components/filter";
 
 export const revalidate = 0;
 
@@ -20,11 +26,30 @@ const CategoryPage: React.FC<CategoryPageProps> = async ({
         categoryId: params.categoryId,
         colorId: searchParams.colorId,
         sizeId: searchParams.sizeId
-    })
+    });
+    const sizes = await getSizes();
+    const colors = await getColors();
+    const Category = await getCategory(params.categoryId);
 
     return (
-        <div>
-            Category
+        <div className="bg-white">
+            <Container>
+                <Billboard
+                    data={Category.billboard}
+                />
+                <div className="px-4 sm:px-6 lg:px-8 pb-24">
+                    <div className="lg:grid lg:grid-cols-5 lg:gap-x-8">
+                        {/* Add Mobile Filters */}
+                        <div className="hidden lg:block">
+                            <Filter
+                                valueKey="sizeId"
+                                name="Sizes"
+                                data={sizes}
+                            />
+                        </div>
+                    </div>
+                </div>
+            </Container>
         </div>
     );
 }
