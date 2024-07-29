@@ -4,9 +4,11 @@ import getProduct from "@/actions/get-products";
 import getSizes from "@/actions/get-sizes";
 import Billboard from "@/app/components/billboard";
 import Container from "@/app/components/ui/container";
-import Filter from "./components/filter";
 import NoResults from "@/app/components/ui/no-results";
 import ProductCard from "@/app/components/ui/product-card";
+
+import Filter from "./components/filter";
+import MobileFilters from "./components/mobile-filters";
 
 export const revalidate = 0;
 
