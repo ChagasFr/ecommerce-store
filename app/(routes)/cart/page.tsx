@@ -1,10 +1,15 @@
 "use client"
-
-import Container from "@/app/components/ui/container";
 import { useEffect, useState } from "react"
+
+import useCart from "@/hooks/use-cart";
+import Container from "@/app/components/ui/container";
+
 import CartItem from "./components/cart-items";
+import Summary from "./components/summary";
 
 const CartPage = () => {
+    const cart = useCart();
+
     return (
         <div className="bg-white">
             <Container>
@@ -22,10 +27,10 @@ const CartPage = () => {
                                 })}
                             </ul>
                         </div>
-
+                        <Summary />
                     </div>
                 </div>
             </Container>
         </div>
-    )
+    );
 }
