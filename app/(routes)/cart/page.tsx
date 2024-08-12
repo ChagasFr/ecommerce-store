@@ -8,6 +8,7 @@ import CartItem from "./components/cart-items";
 import Summary from "./components/summary";
 
 const CartPage = () => {
+    const [isMounted, setIsMounted] = useState(false)
     const cart = useCart();
 
     return (

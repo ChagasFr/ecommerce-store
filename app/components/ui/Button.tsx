@@ -55,6 +55,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
                     transition
                 `
                 )}
+                disabled={disabled}
                 ref={ref}
                 {...props}
             >
